@@ -13,6 +13,7 @@ import {
 
 function Order() {
   const order = useLoaderData();
+
   // Everyone can search for all orders, so for privacy reasons we're gonna gonna exclude names or address, these are only for the restaurant staff
   const {
     id,
@@ -47,7 +48,7 @@ function Order() {
         <p className="text-xs text-stone-500">(Estimated delivery: {formatDate(estimatedDelivery)})</p>
       </div>
           <ul className="divide-y divide-stone-200 border-b border-top border-stone-200">
-            {cart.map((item)=> <OrderItem item={item} key={item.id}/>)}
+            {cart.map((item)=> <OrderItem item={item} key={item.pizzaId}/>)}
           </ul>
       <div className="space-y-2 bg-stone-200 py-5 px-6">
         <p className="text-sm font-medium text-stone-600">Price pizza: {formatCurrency(orderPrice)}</p>
